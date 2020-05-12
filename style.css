@@ -1,0 +1,27 @@
+/* book-container form-container
+author-input title-input isbn-input save-btn */
+/* javascript
+book-card book-title book-author book-isbn */
+
+#form-container {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#book-container{
+    border: 4px dotted blueviolet;
+    width: 80vw;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#book-card{
+    border: 4px double navy;
+    margin: 1em;
+    width: 20vw;
+    text-align: center;
+}
+

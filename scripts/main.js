@@ -1,15 +1,12 @@
 // ES6 --- Will be only linked in Index
 //book-container
 //author-input title-input isbn-input save-btn
+import eventListeners from "./eventListeners.js"
+import domPrinter from "./domPrinter.js"
+import apiManager from "./apiManager.js"
 const container = document.querySelector("#book-container");
 
-fetch("http://localhost:8088/books")
-  .then((dirtyBooks) => dirtyBooks.json())
-  .then((parsedBooks) => {
-    parsedBooks.forEach((singleBook) => {
-      container.innerHTML += createABookCard(singleBook);
-    });
-  });
+
 
 
 
@@ -17,7 +14,7 @@ fetch("http://localhost:8088/books")
     // console.log("this should be save", event.target.id);
   
     if (event.target.id === "save-btn") {
-      container.innerHTML = "";
+      container.innerHTML += "";
        const authorValue = document.querySelector("#author-input").value;
        const titleValue = document.querySelector("#title-input").value;
       const ISBNValue = document.querySelector("#isbn-input").value;
@@ -27,5 +24,10 @@ fetch("http://localhost:8088/books")
           author: authorValue,
           ISBN: ISBNValue
       }
-       console.log(bookObject)
+     fetchCalls.grabBookObject.then((dirtyBooks) => dirtyBooks.json())
+.then(()=> {
+  console.log(bookObject)
+  container.innerHTML += createABookCard(bookObject)
+})
+  
 }})

@@ -12,4 +12,4 @@ const createABookCard = (singleBook) => {
 `
 }
 
-
+export default createABookCard

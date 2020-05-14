@@ -1,12 +1,13 @@
 // ES6 --- Will be only linked in Index
 //book-container
 //author-input title-input isbn-input save-btn
-import eventListeners from "./eventListeners.js"
-import domPrinter from "./domPrinter.js"
+// import eventListeners from "./eventListeners.js"
+import createABookCard from "./domPrinter.js"
 import apiManager from "./apiManager.js"
+
 const container = document.querySelector("#book-container");
 
-
+apiManager.printOnPageLoad()
 
 
 
@@ -24,7 +25,7 @@ const container = document.querySelector("#book-container");
           author: authorValue,
           ISBN: ISBNValue
       }
-     fetchCalls.grabBookObject.then((dirtyBooks) => dirtyBooks.json())
+     apiManager.grabBookObject(bookObject).then((dirtyBooks) => dirtyBooks.json())
 .then(()=> {
   console.log(bookObject)
   container.innerHTML += createABookCard(bookObject)

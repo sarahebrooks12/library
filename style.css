@@ -18,7 +18,7 @@ book-card book-title book-author book-isbn */
     flex-wrap: wrap;
 }
 
-#book-card{
+.book-card{
     border: 4px double navy;
     margin: 1em;
     width: 20vw;
